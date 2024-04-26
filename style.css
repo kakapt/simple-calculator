@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+button {
+  display: block;
+  height: auto;
+  font-size: 1.6em;
+  color: white;
+  border-radius: 5px;
+  background-color: #428bca;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover,
+#input-output-display:hover {
+  box-shadow: 2px 2px 2px gray;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+.calculator-wrapper {
+  display: grid;
+  grid-template-areas:
+    "display display display"
+    "ce del plus"
+    "sub mul divide"
+    "nine eight seven"
+    "six five four"
+    "three two one"
+    "zero dot equal";
+  grid-gap: 5px;
+  padding: 10px;
+  height: calc(100vh - 20px);
+  width: calc(100vw - 20px);
+  overflow-x: hidden;
+}
+
+#input-output-display {
+  grid-area: display;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  box-sizing: border-box;
+  padding: 0px 10px 0px 10px;
+  background-color: #f9f9f9;
+  width: inherit;
+  max-width: inherit;
+  overflow-x: hidden;
+}
+
+#input-output-display p {
+  height: 100%;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+}
+
+#input-output-display #input {
+  max-width: calc(100%);
+  overflow-x: scroll;
+  position: relative;
+}
+
+#input-output-display #output {
+  justify-content: flex-end;
+}
+
+#ce-btn {
+  background-color: #d9534f;
+}
+
+#del-btn {
+  background-color: #f0ad4e;
+}
+
+#plus-btn,
+#subtract-btn,
+#multiply-btn,
+#divide-btn {
+  background-color: #5cb85c;
+}
+
+#dot-btn,
+#equal-btn {
+  background-color: #5bc0de;
+}
